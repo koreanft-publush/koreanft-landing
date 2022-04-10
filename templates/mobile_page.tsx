@@ -226,6 +226,28 @@ const Footer = styled.footer`
 	background: #272727;
 `;
 
+const FooterContent = styled.div`
+	${tw`mx-6 pt-8 border-transparent border-t-8 border-solid relative`}
+	border-top-color: #303030;
+
+	span {
+		display: flex;
+		position: relative !important;
+		width: 11.5rem !important;
+		height: 2.25rem !important;
+	}
+
+	img {
+		width: 11.5rem !important;
+		height: 2.25rem !important;
+	}
+
+	p {
+		${tw`mt-10 pb-10`}
+		color: #e2e1e1;
+	}
+`;
+
 const MobilePageTemplate: NextPage = () => {
   return (
     <PageWrapper>
@@ -305,12 +327,17 @@ const MobilePageTemplate: NextPage = () => {
 					<ContactMailAnchor href="mailto:koreanft@krnft.kr">
 						<Image src="/mobile/icon_mail.png" layout='fill' />
 						<p>
-							koreanft@kfnft.kr
+							koreanft@krnft.kr
 						</p>
 					</ContactMailAnchor>
 				</ContactSection>
 				<Footer>
-
+					<FooterContent>
+						<Image src="/mobile/logo_w.png" layout='fill' />
+						<p>
+							© 2022 KOREANFT Corporation. All Rights Reserved.
+						</p>
+					</FooterContent>
 				</Footer>
       </MainContent>
     </PageWrapper>
