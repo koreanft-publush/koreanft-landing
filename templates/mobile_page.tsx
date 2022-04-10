@@ -177,10 +177,54 @@ const LocationSection = styled(Section)`
 		font-weight: 300;
 		color: black;
 	}
-
 `;
 
-const Footer = styled.footer``;
+const ContactMailAnchor = styled.a`
+	${tw`px-16 py-2 flex justify-between items-center`}
+	background-color: #303030;
+
+	span {
+		width: 2.5rem !important;
+		height: 2rem !important;
+	}
+
+	img {
+		width: 2.5rem !important;
+		height: 2rem !important;
+	}
+`
+
+const ContactSection = styled(Section)`
+	padding-top: 3rem;
+	padding-bottom: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+
+	background-color: #272727;
+
+	h2 {
+		font-weight: 900;
+		font-size: 3rem;
+		margin: 1rem 0;
+		color: #ff8400;
+	}
+
+	h4 {
+		margin-top: 1.5rem;
+		font-size: 2rem;
+		font-weight: 300;
+		color: white;
+	}
+
+	p {
+		font-size: 2rem;
+		color: white;
+	}
+`;
+
+const Footer = styled.footer`
+	background: #272727;
+`;
 
 const MobilePageTemplate: NextPage = () => {
   return (
@@ -251,6 +295,23 @@ const MobilePageTemplate: NextPage = () => {
 						에이피 비지니스파크 C동
 					</h4>
 				</LocationSection>
+				<ContactSection>
+					<h2>CONTACT</h2>
+					<h4>
+						KOREANFT 관련 궁금하신<br/>
+						부분이 있다면 아래 이메일로<br/>
+						문의해주세요.
+					</h4>
+					<ContactMailAnchor href="mailto:koreanft@krnft.kr">
+						<Image src="/mobile/icon_mail.png" layout='fill' />
+						<p>
+							koreanft@kfnft.kr
+						</p>
+					</ContactMailAnchor>
+				</ContactSection>
+				<Footer>
+
+				</Footer>
       </MainContent>
     </PageWrapper>
   )
