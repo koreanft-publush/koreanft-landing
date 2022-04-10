@@ -119,6 +119,22 @@ const ProjectSection = styled(Section)`
 	min-height: 15rem;
 `;
 
+const PetitionLink = styled.a`
+	display: inline-block;
+
+	margin-top: 1.5rem;
+	margin-bottom: 2rem;
+
+	border: 1px white solid;
+	padding: 1.5rem 2rem;
+
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: normal;
+
+	color: white;
+`;
+
 const ProjectParagraph = styled.p`
 	margin-top: 3rem;
 	margin-left: 1.5rem;
@@ -300,6 +316,9 @@ const MobilePageTemplate: NextPage = () => {
 							위변조가 불가능한 블록체인에 당신 이름과 <br/>
 							함께 남겨드립니다.
 						</h4>
+						<PetitionLink href="https://dokdonft.kr" target="_blank">
+							DOKDONFT 서명하기
+						</PetitionLink>
 					</ProjectParagraph>
 				</ProjectSection>
 				<MockupSection>
