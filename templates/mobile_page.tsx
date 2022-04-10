@@ -107,6 +107,79 @@ const AboutParagraph = styled.p`
 	}
 `;
 
+const HeritageSection = styled(Section)`
+	background-color: #1b2937;
+	${tw`w-full grid`}
+	min-height: 15rem;
+`;
+
+const ProjectSection = styled(Section)`
+	background-color: #143434;
+	${tw`w-full grid`}
+	min-height: 15rem;
+`;
+
+const ProjectParagraph = styled.p`
+	margin-top: 3rem;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+
+	word-break: keep-all;
+
+	h2 {
+		font-weight: 900;
+		font-size: 3rem;
+		margin: 1rem 0;
+		color: #ff8400;
+	}
+
+	h3 {
+		font-weight: 900;
+		font-size: 3rem;
+		color: white;
+
+		margin: 1rem 0;
+	}
+
+	h4 {
+		margin-top: 1.5rem;
+		font-size: 2rem;
+		font-weight: 300;
+		color: #e2e1e1;
+	}
+`;
+
+const MockupSection = styled(Section)`
+	background-color: #143434;
+`;
+
+const NoticeSection = styled(Section)``;
+
+const LocationSection = styled(Section)`
+	background-color: #f7f7f7;
+	text-align: right;
+
+	padding-top: 3rem;
+	padding-bottom: 4rem;
+	padding-right: 1.5rem;
+
+	h2 {
+		font-weight: 900;
+		font-size: 3rem;
+		margin: 1rem 0;
+		color: #ff8400;
+	}
+
+
+	h4 {
+		margin-top: 1.5rem;
+		font-size: 2rem;
+		font-weight: 300;
+		color: black;
+	}
+
+`;
+
 const Footer = styled.footer``;
 
 const MobilePageTemplate: NextPage = () => {
@@ -143,65 +216,42 @@ const MobilePageTemplate: NextPage = () => {
 							우리 역사의 문화를 블록체인 위에 남깁니다. <br/>
 						</h4>
 					</AboutParagraph>
-
-
 				</AboutSection>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-
-					<OutlinedText>
-						Hello World Test
-					</OutlinedText>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+				<HeritageSection>
+					<FilledImage src="/mobile/heritage_view_m.png" layout="fill" />
+				</HeritageSection>
+				<ProjectSection>
+					<ProjectParagraph>
+						<h2>
+							FIRST<br/>
+							PROJECT
+						</h2>
+						<h3>
+							DOKDO NFT
+						</h3>
+						<h4>
+							독도가 대한민국 영토라는 자명한 사실을 <br/>
+							위변조가 불가능한 블록체인에 당신 이름과 <br/>
+							함께 남겨드립니다.
+						</h4>
+					</ProjectParagraph>
+				</ProjectSection>
+				<MockupSection>
+					<FilledImage src="/mobile/mockup.png" layout='fill' />
+				</MockupSection>
+				<NoticeSection>
+					<a href="https://t.me/+5QilEohoFf9iMWRl" target="_blank">
+						<FilledImage src="/mobile/notice.png" layout='fill' />
+					</a>
+				</NoticeSection>
+				<LocationSection>
+					<h2>LOCATION</h2>
+					<h4>
+						서울 송파구 법원로 9길 26,<br/>
+						에이피 비지니스파크 C동
+					</h4>
+				</LocationSection>
       </MainContent>
-
-      <Footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </Footer>
     </PageWrapper>
   )
 }
