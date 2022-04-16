@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import {isMobile} from 'react-device-detect';
+import {useMobileOrientation} from 'react-device-detect';
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -9,8 +9,10 @@ import * as gtag from '../lib/gtag';
 import dynamic from 'next/dynamic'
 
 const Home: NextPage = () => {
+  const { isLandscape } = useMobileOrientation()
+
   const PcPage = dynamic(() => import("./pc"));
-  const MobilePage = dynamic(() => import("./pc"));
+  const MobilePage = dynamic(() => import("./mobile"));
 
   const router = useRouter()
   useEffect(() => {
@@ -24,7 +26,7 @@ const Home: NextPage = () => {
   }, [router.events])
 
   return (
-    isMobile ? <MobilePage /> : <PcPage />
+    !isLandscape ? <MobilePage /> : <PcPage />
   )
 }
 
