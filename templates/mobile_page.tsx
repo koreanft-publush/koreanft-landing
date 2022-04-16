@@ -144,7 +144,7 @@ const MobilePageTemplate: NextPage = () => {
 				].map((element: number) => Math.ceil(element)).join(",")
 			)
 		);
-	})
+	}, 3000);
 
   return (
     <PageWrapper>

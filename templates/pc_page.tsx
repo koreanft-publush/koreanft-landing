@@ -144,7 +144,7 @@ const PcPageTemplate: NextPage = () => {
 				].map((element: number) => Math.ceil(element)).join(",")
 			)
 		);
-	}, 500);
+	}, 3000);
 
   return (
     <PageWrapper>
