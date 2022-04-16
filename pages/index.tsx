@@ -6,10 +6,12 @@ import { useRouter } from 'next/router'
 
 import * as gtag from '../lib/gtag';
 
-import PcPage from './pc'
-import MobilePage from './mobile'
+import dynamic from 'next/dynamic'
 
 const Home: NextPage = () => {
+  const PcPage = dynamic(() => import("./pc"));
+  const MobilePage = dynamic(() => import("./pc"));
+
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
