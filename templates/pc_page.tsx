@@ -102,6 +102,50 @@ const PcPageTemplate: NextPage = () => {
 		);
 	}, [contactSectionRef]);
 
+	setTimeout(() => {
+		const projectSectionWidth: number = projectSectionRef.current?.scrollWidth || 0;
+		const projectSectionHeight: number = projectSectionRef.current?.scrollHeight || 0;
+
+		setProjectSectionCoordinates(
+			(
+				[
+					projectSectionWidth * 14/100,
+					projectSectionHeight * 61/100,
+					projectSectionWidth * 35/100,
+					projectSectionHeight * 74/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		const noticeSectionWidth: number = noticeSectionRef.current?.scrollWidth || 0;
+		const noticeSectionHeight: number = noticeSectionRef.current?.scrollHeight || 0;
+
+		setNoticeSectionCoordinates(
+			(
+				[
+					noticeSectionWidth * 38/100,
+					noticeSectionHeight * 60/100,
+					noticeSectionWidth * 62/100,
+					noticeSectionHeight * 77/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		const contactSectionWidth: number = contactSectionRef.current?.scrollWidth || 0;
+		const contactSectionHeight: number = contactSectionRef.current?.scrollHeight || 0;
+
+		setContactSectionCoordinates(
+			(
+				[
+					contactSectionWidth * 14.5/100,
+					contactSectionHeight * 55/100,
+					contactSectionWidth * 40/100,
+					contactSectionHeight * 67/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+	}, 500);
+
   return (
     <PageWrapper>
       <Head>

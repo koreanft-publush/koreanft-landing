@@ -102,6 +102,50 @@ const MobilePageTemplate: NextPage = () => {
 		);
 	}, [contactSectionRef]);
 
+	setTimeout(() => {
+		const projectSectionWidth: number = projectSectionRef.current?.scrollWidth || 0;
+		const projectSectionHeight: number = projectSectionRef.current?.scrollHeight || 0;
+
+		setProjectSectionCoordinates(
+			(
+				[
+					projectSectionWidth * 5/100,
+					projectSectionHeight * 42/100,
+					projectSectionWidth * 60/100,
+					projectSectionHeight * 49/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		const noticeSectionWidth: number = noticeSectionRef.current?.scrollWidth || 0;
+		const noticeSectionHeight: number = noticeSectionRef.current?.scrollHeight || 0;
+
+		setNoticeSectionCoordinates(
+			(
+				[
+					noticeSectionWidth * 18/100,
+					noticeSectionHeight * 65/100,
+					noticeSectionWidth * 82/100,
+					noticeSectionHeight * 82/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		const contactSectionWidth: number = contactSectionRef.current?.scrollWidth || 0;
+		const contactSectionHeight: number = contactSectionRef.current?.scrollHeight || 0;
+
+		setContactSectionCoordinates(
+			(
+				[
+					contactSectionWidth * 5/100,
+					contactSectionHeight * 46/100,
+					contactSectionWidth * 95/100,
+					contactSectionHeight * 64/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+	})
+
   return (
     <PageWrapper>
       <Head>
