@@ -23,6 +23,7 @@ const MainContent = styled.main`
 const Section = styled.section`
 	${tw`w-full`}
 	height: max-content;
+	margin-bottom: -0.5rem;
 
 	object, img {
 		width: 100%;
