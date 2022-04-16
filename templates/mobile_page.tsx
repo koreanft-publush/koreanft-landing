@@ -5,6 +5,13 @@ import Head from 'next/head'
 
 import { useRef, useState, useEffect } from "react";
 
+import introImage from "../public/mobile/1.jpg";
+import aboutImage from "../public/mobile/2.jpg";
+import projecttImage from "../public/mobile/3.jpg";
+import noticeImage from "../public/mobile/4.jpg";
+import locationImage from "../public/mobile/5.jpg";
+import contactImage from "../public/mobile/6.jpg";
+
 const PageWrapper = styled.div`
 `;
 
@@ -104,7 +111,7 @@ const MobilePageTemplate: NextPage = () => {
       </Head>
 			<MainContent>
 				<Section>
-					<img src="/mobile/1.jpg" useMap="#header" alt={`
+					<img src={introImage.src} useMap="#header" alt={`
 						우리의 역사와 문화를
 
 						당신과 함께 NFT로
@@ -112,7 +119,7 @@ const MobilePageTemplate: NextPage = () => {
 					`} />
 				</Section>
 				<Section>
-					<img src="/mobile/2.jpg" useMap="#about" alt={`
+					<img src={aboutImage.src} useMap="#about" alt={`
 						ABOUT
 
 						블록체인 기술의 핵심은 분산원장이고 이것은 정보의 위변조를 불가능하게 합니다.<br/>
@@ -120,7 +127,7 @@ const MobilePageTemplate: NextPage = () => {
 					`}/>
 				</Section>
 				<Section id="project-section">
-					<img src="/mobile/3.jpg" useMap="#project" ref={projectSectionRef} alt={`
+					<img src={projecttImage.src} useMap="#project" ref={projectSectionRef} alt={`
 						FIRST PROJECT
 
 						DOKDO NFT
@@ -134,7 +141,7 @@ const MobilePageTemplate: NextPage = () => {
 					</map>
 				</Section>
 				<Section>
-					<img src="/mobile/4.jpg" useMap="#notice" ref={noticeSectionRef} alt={`
+					<img src={noticeImage.src} useMap="#notice" ref={noticeSectionRef} alt={`
 						NOTICE
 
 						DOKDO NFT에 대한 최신 소식과 안내사항을 확인하세요.
@@ -144,7 +151,7 @@ const MobilePageTemplate: NextPage = () => {
 					</map>
 				</Section>
 				<Section>
-					<img src="/mobile/5.jpg" useMap="#location" alt={`
+					<img src={locationImage.src} useMap="#location" alt={`
 						LOCATION
 
 						서울 송파구 법원로 9길 26
@@ -152,7 +159,7 @@ const MobilePageTemplate: NextPage = () => {
 					`} />
 				</Section>
 				<Section>
-					<img src="/mobile/6.jpg" useMap="#contact" ref={contactSectionRef} alt={`
+					<img src={contactImage.src} useMap="#contact" ref={contactSectionRef} alt={`
 						CONTACT
 
 						KOREANFT 관련 궁금하신 부분이 있다면
