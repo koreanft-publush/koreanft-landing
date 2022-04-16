@@ -5,12 +5,12 @@ import Head from 'next/head'
 
 import { useRef, useState, useEffect } from "react";
 
-import introImage from "../public/mobile/1.jpg";
-import aboutImage from "../public/mobile/2.jpg";
-import projecttImage from "../public/mobile/3.jpg";
-import noticeImage from "../public/mobile/4.jpg";
-import locationImage from "../public/mobile/5.jpg";
-import contactImage from "../public/mobile/6.jpg";
+import introImage from "../public/mobile/mobile_intro.jpg";
+import aboutImage from "../public/mobile/mobile_about.jpg";
+import projecttImage from "../public/mobile/mobile_project.jpg";
+import noticeImage from "../public/mobile/mobile_notice.jpg";
+import locationImage from "../public/mobile/mobile_location.jpg";
+import contactImage from "../public/mobile/mobile_contact.jpg";
 
 const PageWrapper = styled.div`
 `;
