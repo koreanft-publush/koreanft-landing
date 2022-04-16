@@ -170,8 +170,8 @@ const PcPageTemplate: NextPage = () => {
 						이런 점을 활용하여 여러 사람들의 서명과 함께 우리 역사의 문화를 블록체인 위에 남깁니다. <br/>
 					`}/>
 				</Section>
-				<Section id="project-section">
-					<img src={projecttImage.src} useMap="#project" ref={projectSectionRef} alt={`
+				<Section id="project-section" ref={projectSectionRef}>
+					<img src={projecttImage.src} useMap="#project" alt={`
 						FIRST PROJECT
 
 						DOKDO NFT
@@ -184,8 +184,8 @@ const PcPageTemplate: NextPage = () => {
 						<area shape="rect" coords={projectSectionCoordinates} href="https://dokdonft.kr" target="_blank" alt="DOKDO NFT 서명하기" />
 					</map>
 				</Section>
-				<Section>
-					<img src={noticeImage.src} useMap="#notice" ref={noticeSectionRef} alt={`
+				<Section  ref={noticeSectionRef}>
+					<img src={noticeImage.src} useMap="#notice" alt={`
 						NOTICE
 
 						DOKDO NFT에 대한 최신 소식과 안내사항을 확인하세요.
@@ -202,8 +202,8 @@ const PcPageTemplate: NextPage = () => {
 						에이피 비지니스파크 C동
 					`} />
 				</Section>
-				<Section>
-					<img src={contactImage.src} useMap="#contact" ref={contactSectionRef} alt={`
+				<Section ref={contactSectionRef}>
+					<img src={contactImage.src} useMap="#contact" alt={`
 						CONTACT
 
 						KOREANFT 관련 궁금하신 부분이 있다면
