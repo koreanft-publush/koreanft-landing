@@ -23,6 +23,7 @@ const MainContent = styled.main`
 const Section = styled.section`
 	${tw`w-full`}
 	height: max-content;
+	margin-bottom: -0.5rem;
 
 	object, img {
 		width: 100%;
@@ -36,6 +37,31 @@ const PcPageTemplate: NextPage = () => {
 	const projectSectionRef = useRef<HTMLImageElement>(null);
 	const noticeSectionRef = useRef<HTMLImageElement>(null);
 	const contactSectionRef = useRef<HTMLImageElement>(null);
+
+	const [
+		aboutLinkBoxCoordinates,
+		setAboutLinkBoxCoordinates
+	] = useState("0,0,0,0");
+
+	const [
+		projectLinkBoxCoordinates,
+		setProjectLinkBoxCoordinates
+	] = useState("0,0,0,0");
+
+	const [
+		noticeLinkBoxCoordinates,
+		setNoticeLinkBoxCoordinates
+	] = useState("0,0,0,0");
+
+	const [
+		locationLinkBoxCoordinates,
+		setLocationLinkBoxCoordinates
+	] = useState("0,0,0,0");
+
+	const [
+		contactLinkBoxCoordinates,
+		setContactLinkBoxCoordinates
+	] = useState("0,0,0,0");
 
 	const [
 		projectSectionCoordinates,
@@ -52,6 +78,66 @@ const PcPageTemplate: NextPage = () => {
 		setContactSectionCoordinates,
 	] = useState("0,0,0,0");
 
+	useEffect(() => {
+		const headerWidth: number = headerRef.current?.scrollWidth || 0;
+		const headerHeight: number = headerRef.current?.scrollHeight || 0;
+
+		setAboutLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 55/100,
+					headerHeight * 4/100,
+					headerWidth * 62/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setProjectLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 63/100,
+					headerHeight * 4/100,
+					headerWidth * 70/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setNoticeLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 71/100,
+					headerHeight * 4/100,
+					headerWidth * 78/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setLocationLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 79/100,
+					headerHeight * 4/100,
+					headerWidth * 87/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setContactLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 88/100,
+					headerHeight * 4/100,
+					headerWidth * 95/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+	}, [headerRef])
 
 	useEffect(() => {
 		const projectSectionWidth: number = projectSectionRef.current?.scrollWidth || 0;
@@ -103,6 +189,64 @@ const PcPageTemplate: NextPage = () => {
 	}, [contactSectionRef]);
 
 	setTimeout(() => {
+		const headerWidth: number = headerRef.current?.scrollWidth || 0;
+		const headerHeight: number = headerRef.current?.scrollHeight || 0;
+
+		setAboutLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 55/100,
+					headerHeight * 4/100,
+					headerWidth * 62/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setProjectLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 63/100,
+					headerHeight * 4/100,
+					headerWidth * 70/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setNoticeLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 71/100,
+					headerHeight * 4/100,
+					headerWidth * 78/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setLocationLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 79/100,
+					headerHeight * 4/100,
+					headerWidth * 87/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
+		setContactLinkBoxCoordinates(
+			(
+				[
+					headerWidth * 88/100,
+					headerHeight * 4/100,
+					headerWidth * 95/100,
+					headerHeight * 11/100,
+				].map((element: number) => Math.ceil(element)).join(",")
+			)
+		);
+
 		const projectSectionWidth: number = projectSectionRef.current?.scrollWidth || 0;
 		const projectSectionHeight: number = projectSectionRef.current?.scrollHeight || 0;
 
@@ -154,15 +298,22 @@ const PcPageTemplate: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 			<MainContent>
-				<Section>
+				<Section ref={headerRef}>
 					<img src={introImage.src} useMap="#header" alt={`
 						우리의 역사와 문화를
 
 						당신과 함께 NFT로
 						만들어 갑니다.
 					`} />
+					<map name="header">
+						<area shape="rect" coords={aboutLinkBoxCoordinates} href="#about" alt="ABOUT" />
+						<area shape="rect" coords={projectLinkBoxCoordinates} href="#project" alt="PROJECT" />
+						<area shape="rect" coords={noticeLinkBoxCoordinates} href="#notice" alt="NOTICE" />
+						<area shape="rect" coords={locationLinkBoxCoordinates} href="#location" alt="LOCATION" />
+						<area shape="rect" coords={contactLinkBoxCoordinates} href="#contact" alt="CONTACT" />
+					</map>
 				</Section>
-				<Section>
+				<Section id="about">
 					<img src={aboutImage.src} useMap="#about" alt={`
 						ABOUT
 
@@ -170,7 +321,7 @@ const PcPageTemplate: NextPage = () => {
 						이런 점을 활용하여 여러 사람들의 서명과 함께 우리 역사의 문화를 블록체인 위에 남깁니다. <br/>
 					`}/>
 				</Section>
-				<Section id="project-section" ref={projectSectionRef}>
+				<Section id="project" ref={projectSectionRef}>
 					<img src={projecttImage.src} useMap="#project" alt={`
 						FIRST PROJECT
 
@@ -184,7 +335,7 @@ const PcPageTemplate: NextPage = () => {
 						<area shape="rect" coords={projectSectionCoordinates} href="https://dokdonft.kr" target="_blank" alt="DOKDO NFT 서명하기" />
 					</map>
 				</Section>
-				<Section  ref={noticeSectionRef}>
+				<Section id="notice" ref={noticeSectionRef}>
 					<img src={noticeImage.src} useMap="#notice" alt={`
 						NOTICE
 
@@ -194,7 +345,7 @@ const PcPageTemplate: NextPage = () => {
 						<area shape="rect" coords={noticeSectionCoordinates} href="https://t.me/+5QilEohoFf9iMWRl" target="_blank" alt="텔레그램 참여하기" />
 					</map>
 				</Section>
-				<Section>
+				<Section id="location">
 					<img src={locationImage.src} useMap="#location" alt={`
 						LOCATION
 
@@ -202,7 +353,7 @@ const PcPageTemplate: NextPage = () => {
 						에이피 비지니스파크 C동
 					`} />
 				</Section>
-				<Section ref={contactSectionRef}>
+				<Section id="contact" ref={contactSectionRef}>
 					<img src={contactImage.src} useMap="#contact" alt={`
 						CONTACT
 
